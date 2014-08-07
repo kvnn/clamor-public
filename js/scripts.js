@@ -1,4 +1,4 @@
-if(!Modernizr.touch){ 
+if(!Modernizr.touch){
     $.stellar();
 }
 
@@ -6,11 +6,11 @@ if(!Modernizr.touch){
 Liquid Slider - Home Text Slider
 =============================================== */
 $('#slider-home').liquidSlider({
-	  autoSlide:          true,
-	  autoSlideInterval:  4500,
-	  autoSlideControls:  true,
-	  forceAutoSlide: true,
-	  dynamicArrows: false,
+    autoSlide:          true,
+    autoSlideInterval:  4500,
+    autoSlideControls:  true,
+    forceAutoSlide: true,
+    dynamicArrows: false,
     
   slideEaseFunction:'animate.css',
   slideEaseDuration:900,
@@ -29,14 +29,14 @@ $('#slider-home').liquidSlider({
 Liquid Slider - Quotes Slider
 =============================================== */
 $('#separator-slider-1').liquidSlider({
-	  autoSlide:          true,
-	  autoSlideDirection: 'right',
-	  autoSlideInterval:  3000,
-	  autoSlideControls:  true,
-	  forceAutoSlide: true,
-	  autoHeight: false,
+    autoSlide:          true,
+    autoSlideDirection: 'right',
+    autoSlideInterval:  3000,
+    autoSlideControls:  true,
+    forceAutoSlide: true,
+    autoHeight: false,
       dynamicArrows: true,
-	  
+    
   slideEaseFunction:'animate.css',
   slideEaseDuration:500,
   heightEaseDuration:500,
@@ -54,15 +54,15 @@ $('#separator-slider-1').liquidSlider({
 Liquid Slider - Testimonials
 =============================================== */
 $('#testimonials-slider').liquidSlider({
-	  autoSlide:          true,
-	  autoSlideDirection: 'right',
-	  autoSlideInterval:  5000,
-	  autoSlideControls:  true,
-	  forceAutoSlide: true,
-	  autoHeight: false,
+    autoSlide:          true,
+    autoSlideDirection: 'right',
+    autoSlideInterval:  5000,
+    autoSlideControls:  true,
+    forceAutoSlide: true,
+    autoHeight: false,
     dynamicArrows: true,
-	  
-	  
+    
+    
   slideEaseFunction:'animate.css',
   slideEaseDuration:500,
   heightEaseDuration:500,
@@ -90,25 +90,25 @@ Navbar "hovernav" dropdown menu
 
 $(document).ready(function() {
   /*
-	"Hovernav" navbar dropdown on hover
-	Delete this segment if you don't want it, and delete the corresponding CSS in style.css
-	*/
-	var mq = window.matchMedia('(min-width: 768px)');
+  "Hovernav" navbar dropdown on hover
+  Delete this segment if you don't want it, and delete the corresponding CSS in style.css
+  */
+  var mq = window.matchMedia('(min-width: 768px)');
   if (mq.matches) {
     $('ul.navbar-nav li').addClass('hovernav');
   } else {
-  	$('ul.navbar-nav li').removeClass('hovernav');
+    $('ul.navbar-nav li').removeClass('hovernav');
   };
-	/*
-	The addClass/removeClass also needs to be triggered
+  /*
+  The addClass/removeClass also needs to be triggered
   on page resize <=> 768px
-	*/
+  */
   if (matchMedia) {
     var mq = window.matchMedia('(min-width: 768px)');
     mq.addListener(WidthChange);
     WidthChange(mq);
   }
-	function WidthChange(mq) {
+  function WidthChange(mq) {
     if (mq.matches) {
       $('ul.navbar-nav li').addClass('hovernav');
     } else {
@@ -155,7 +155,7 @@ mb.YTPlayer
 =============================================== */
 
 $(function(){
-	$(".player").mb_YTPlayer();
+  $(".player").mb_YTPlayer();
 });
 
 /* ==============================================
@@ -164,12 +164,12 @@ Skill Bars
 
 $('.skills-col').waypoint(function() {
    jQuery('.skillbar').each(function(){
-		jQuery(this).find('.skillbar-bar').animate({
-			width:jQuery(this).attr('data-percent')
-		},2000);
-	});
-	
-	}, { offset: '100%' 
+    jQuery(this).find('.skillbar-bar').animate({
+      width:jQuery(this).attr('data-percent')
+    },2000);
+  });
+  
+  }, { offset: '100%'
 });
 
 /* ==============================================
@@ -179,20 +179,20 @@ Preloader
 jQuery(window).load(function(){
     jQuery("#preloader").delay(500).fadeOut(1000);
         jQuery(".preload-logo").addClass('fadeOutLeft');
-		jQuery(".back-logo").addClass('fadeOutRight');
-		jQuery(".preload-gif").addClass('fadeOutUp');
+   jQuery(".back-logo").addClass('fadeOutRight');
+   jQuery(".preload-gif").addClass('fadeOutUp');
     
 });
 
 /* ==============================================
 Counter Up
 =============================================== */
- jQuery(document).ready(function($) {
-            $('.counter').counterUp({
-                delay: 10,
-                time: 800
-            });
-        });
+jQuery(document).ready(function($) {
+    $('.counter').counterUp({
+        delay: 10,
+        time: 800
+    });
+});
  
  
 /* ==============================================
@@ -260,12 +260,12 @@ $(function() {
 Parallax
 =============================================== */
 $(document).ready(function(){
-	
+  
       $(window).stellar({ 
-	  horizontalScrolling: false,
-	  responsive: true
-	  });
-	  
+    horizontalScrolling: false,
+    responsive: true
+    });
+    
 });
 
 
@@ -275,47 +275,48 @@ Portfolio MixItUp
 =============================================== */
 
 $(function () {
-		
-		var filterList = {
-		
-			init: function () {
-			
-				// MixItUp plugin
-				// http://mixitup.io
-				$('#portfoliolist').mixitup({
-					targetSelector: '.portfolio',
-					filterSelector: '.filter',
-					effects: ['fade'],
-					easing: 'snap',
-					// call the hover effect
-					onMixEnd: filterList.hoverEffect()
-				});				
-			
-			},
-			
-			hoverEffect: function () {
-			
-				// Simple parallax effect
-				/* $('#portfoliolist .portfolio').hover(
-					function () {
-						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
-					},
-					function () {
-						$(this).find('.label').stop().animate({bottom: -80}, 200, 'easeInQuad');
-						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-					}		
-				);		*/
-			
-			}
+    return;
+    
+    var filterList = {
+    
+      init: function () {
+      
+        // MixItUp plugin
+        // http://mixitup.io
+        $('#portfoliolist').mixitup({
+          targetSelector: '.portfolio',
+          filterSelector: '.filter',
+          effects: ['fade'],
+          easing: 'snap',
+          // call the hover effect
+          onMixEnd: filterList.hoverEffect()
+        });       
+      
+      },
+      
+      hoverEffect: function () {
+      
+        // Simple parallax effect
+        /* $('#portfoliolist .portfolio').hover(
+          function () {
+            $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+            $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');       
+          },
+          function () {
+            $(this).find('.label').stop().animate({bottom: -80}, 200, 'easeInQuad');
+            $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');               
+          }   
+        );    */
+      
+      }
 
-		};
-		
-		// Run the show!
-		filterList.init();
-		
-		
-	});	
+    };
+    
+    // Run the show!
+    filterList.init();
+    
+    
+  }); 
 
 
 
@@ -327,7 +328,7 @@ Magnific Popup
 =============================================== */
 
 $('.gallery-item').magnificPopup({
-	
+  
   type: 'image',
   gallery:{ 
   enabled:true,
@@ -364,38 +365,38 @@ Contact Form
 
 jQuery(document).ready(function(){
 
-	$('#contactform').submit(function(){
+  $('#contactform').submit(function(){
 
-		var action = $(this).attr('action');
+    var action = $(this).attr('action');
 
-		$("#message").slideUp(750,function() {
-		$('#message').hide();
+    $("#message").slideUp(750,function() {
+    $('#message').hide();
 
- 		$('#submit')
-			.after('<img src="img/ajax-loader.gif" class="loader" />')
-			.attr('disabled','disabled');
+    $('#submit')
+      .after('<img src="img/ajax-loader.gif" class="loader" />')
+      .attr('disabled','disabled');
 
-		$.post(action, {
-			name: $('#name').val(),
-			email: $('#email').val(),
-			phone: $('#phone').val(),
-			comments: $('#comments').val(),
-		},
-			function(data){
-				document.getElementById('message').innerHTML = data;
-				$('#message').slideDown('slow');
-				$('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
-				$('#submit').removeAttr('disabled');
-				if(data.match('success') != null) $('#contactform').slideUp('slow');
+    $.post(action, {
+      name: $('#name').val(),
+      email: $('#email').val(),
+      phone: $('#phone').val(),
+      comments: $('#comments').val(),
+    },
+      function(data){
+        document.getElementById('message').innerHTML = data;
+        $('#message').slideDown('slow');
+        $('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
+        $('#submit').removeAttr('disabled');
+        if(data.match('success') != null) $('#contactform').slideUp('slow');
 
-			}
-		);
+      }
+    );
 
-		});
+    });
 
-		return false;
+    return false;
 
-	});
+  });
 
 });
 
@@ -405,19 +406,19 @@ Google Maps
 
 $("#map").gmap3({
     marker:{     
-	address:"93 Worth St, New York, NY", 
-	options:{ icon: "img/marker.png"}},
+  address:"93 Worth St, New York, NY", 
+  options:{ icon: "img/marker.png"}},
     map:{
     options:{
-	styles: [ {
-	stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]},
-	],
-	zoom: 13,
-	scrollwheel:false,
-	draggable: true }
-	}
-	});	
-	
+  styles: [ {
+  stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]},
+  ],
+  zoom: 13,
+  scrollwheel:false,
+  draggable: true }
+  }
+  }); 
+  
 /* ==============================================
 Bootstrap Tooltip.js and Alert.js
 =============================================== */
@@ -433,17 +434,17 @@ Back to Top
 =============================================== */
 
 $(window).scroll(function(){
-		if($(window).scrollTop() > 300){
-			$("#back-to-top").fadeIn(600);
-		} else{
-			$("#back-to-top").fadeOut(600);
-		}
-	});
-	
-	$('#back-to-top, .back-to-top').click(function() {
-		  $('html, body').animate({ scrollTop:0 }, '1000');
-		  return false;
-	});
+    if($(window).scrollTop() > 300){
+      $("#back-to-top").fadeIn(600);
+    } else{
+      $("#back-to-top").fadeOut(600);
+    }
+  });
+  
+  $('#back-to-top, .back-to-top').click(function() {
+      $('html, body').animate({ scrollTop:0 }, '1000');
+      return false;
+  });
 
 
 /* ==============================================
@@ -583,11 +584,11 @@ Backstretch - v2.0.4
 =============================================== */
     
 $(".home-fullscreen-slider").backstretch([
-	"img/slide-1.jpg",
-	"img/slide-2.jpg",
-	"img/slide-3.jpg"
+  "img/slide-1.jpg",
+  "img/slide-2.jpg",
+  "img/slide-3.jpg"
 ], {
-	fade: 750,
-	duration: 4000
+  fade: 750,
+  duration: 4000
 });
     
