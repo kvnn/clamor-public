@@ -1,6 +1,4 @@
-if(!Modernizr.touch){
-    $.stellar();
-}
+
 
 /* ==============================================
 Liquid Slider - Home Text Slider
@@ -134,43 +132,8 @@ else {
 }
 close_toggle();
 
-$(window).resize(close_toggle); 
- 
-/* ==============================================
-WOW plugin triggers animation.css on scroll
-=============================================== */
+$(window).resize(close_toggle);
 
-var wow = new WOW(
-  {
-    boxClass:     'wow',      // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       150,          // distance to the element when triggering the animation (default is 0)
-    mobile:       false        // trigger animations on mobile devices (true is default)
-  }
-);
-wow.init();
-
-/* ==============================================
-mb.YTPlayer
-=============================================== */
-
-$(function(){
-  $(".player").mb_YTPlayer();
-});
-
-/* ==============================================
-Skill Bars
-=============================================== */
-
-$('.skills-col').waypoint(function() {
-   jQuery('.skillbar').each(function(){
-    jQuery(this).find('.skillbar-bar').animate({
-      width:jQuery(this).attr('data-percent')
-    },2000);
-  });
-  
-  }, { offset: '100%'
-});
 
 /* ==============================================
 Preloader
@@ -183,26 +146,6 @@ jQuery(window).load(function(){
    jQuery(".preload-gif").addClass('fadeOutUp');
     
 });
-
-/* ==============================================
-Counter Up
-=============================================== */
-jQuery(document).ready(function($) {
-    $('.counter').counterUp({
-        delay: 10,
-        time: 800
-    });
-});
- 
- 
-/* ==============================================
-Fit Vids
-=============================================== */
-$(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $("#thing-with-videos").fitVids();
-  });
-
 
 
 
@@ -255,18 +198,6 @@ $(function() {
     }
 });
 
-  
-/* ==============================================
-Parallax
-=============================================== */
-$(document).ready(function(){
-  
-      $(window).stellar({ 
-    horizontalScrolling: false,
-    responsive: true
-    });
-    
-});
 
 
 
@@ -316,118 +247,12 @@ $(function () {
     filterList.init();
     
     
-  }); 
+  });
 
 
 
 document.addEventListener("touchstart", function(){}, true);
 
-
-/* ==============================================
-Magnific Popup
-=============================================== */
-
-$('.gallery-item').magnificPopup({
-  
-  type: 'image',
-  gallery:{ 
-  enabled:true,
-  arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-}
-  
-});
-
-$(document).ready(function() {
-        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-            disableOn: 700,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-
-            fixedContentPos: false
-        });
-    });
-
-/* ==============================================
-FlexSlider v2.2.2
-=============================================== */
-    
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
-  });
-}); 
-
-/* ==============================================
-Contact Form
-=============================================== */
-
-jQuery(document).ready(function(){
-
-  $('#contactform').submit(function(){
-
-    var action = $(this).attr('action');
-
-    $("#message").slideUp(750,function() {
-    $('#message').hide();
-
-    $('#submit')
-      .after('<img src="img/ajax-loader.gif" class="loader" />')
-      .attr('disabled','disabled');
-
-    $.post(action, {
-      name: $('#name').val(),
-      email: $('#email').val(),
-      phone: $('#phone').val(),
-      comments: $('#comments').val(),
-    },
-      function(data){
-        document.getElementById('message').innerHTML = data;
-        $('#message').slideDown('slow');
-        $('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
-        $('#submit').removeAttr('disabled');
-        if(data.match('success') != null) $('#contactform').slideUp('slow');
-
-      }
-    );
-
-    });
-
-    return false;
-
-  });
-
-});
-
-/* ==============================================
-Google Maps
-=============================================== */
-
-$("#map").gmap3({
-    marker:{     
-  address:"93 Worth St, New York, NY", 
-  options:{ icon: "img/marker.png"}},
-    map:{
-    options:{
-  styles: [ {
-  stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]},
-  ],
-  zoom: 13,
-  scrollwheel:false,
-  draggable: true }
-  }
-  }); 
-  
-/* ==============================================
-Bootstrap Tooltip.js and Alert.js
-=============================================== */
-
-$(function () { $("[data-toggle='tooltip']").tooltip();  
-
-$(".alert").alert()
- 
-});
 
 /* ==============================================
 Back to Top
@@ -579,16 +404,4 @@ SmoothScroll (for Mouse Wheel) v1.2.1
 })();
 
 
-/* ==============================================
-Backstretch - v2.0.4
-=============================================== */
-    
-$(".home-fullscreen-slider").backstretch([
-  "img/slide-1.jpg",
-  "img/slide-2.jpg",
-  "img/slide-3.jpg"
-], {
-  fade: 750,
-  duration: 4000
-});
     
