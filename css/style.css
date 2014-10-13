@@ -349,6 +349,7 @@ h2 small {
 	
 }
 .move {
+	display: none; /* SPLASH */
 	width: 40px;
 	margin-left: auto;
 	margin-right: auto;
